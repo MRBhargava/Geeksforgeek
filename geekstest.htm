@@ -1,0 +1,21 @@
+Write a C program that prints <strong>Hello World</strong> without including any header file.
+
+<em>Conceptually it's seems impractical to write a C program that print <strong>Hello World</strong> without using a header file of "stdio.h". Since the definition of printf() function contains in the "stdio.h" header file.</em>
+
+	But we can easily achieve this by taking the advantage of C pre-processor directives. The fact is at the time of compiling a program, the first phase of C preprocessing expands all header files into a single file and after that compiler itself compiles the expanded file. Therefore we just need to extract the definition of printf() function from header file and use it in our main program like that:-
+
+[sourcecode language="C" highlight="2"]
+//Declare the definition of printf() function
+int printf(const char *format, ...);
+
+int main()
+{
+  printf( "Hello World" );
+  return 0;
+}
+[/sourcecode]
+<pre><strong>Output:</strong> Hello World</pre></li>
+
+See <a href="http://www.geeksforgeeks.org/compiling-a-c-program-behind-the-scenes/" target="_blank">this</a> to know more about all phases of compilation of C program.
+
+This blog is contributed by <a href="https://www.facebook.com/banalshubham"> Shubham Bansal</a>. If you like GeeksforGeeks and would like to contribute, you can also write an article using <a href="http://www.contribute.geeksforgeeks.org">contribute.geeksforgeeks.org</a> or mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.
